@@ -11,7 +11,7 @@
   		ORDER BY id asc
   	</select>-->
 
-  	<select id="getAll" parameterType="String" resultType="PressInfoDTO">
+  	<select id="getAll" parameterType="String" resultType="pressInfoDTO">
   	select p.name, p.date, p.title from press_info
   		where date between #{from_date} and #{to_date} as p, speaker_list as s
 			where p.id = s.press_id 
