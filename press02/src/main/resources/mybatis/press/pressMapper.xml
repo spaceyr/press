@@ -10,7 +10,7 @@
   		FROM press_info
   		ORDER BY id asc
   	</select>-->
-<!-- 특정날짜 이후 조회 -->
+
   	<select id="getAll" parameterType="String" resultType="PressInfoDTO">
   	select p.name, p.date, p.title from press_info
   		where date between #{from_date} and #{to_date} as p, speaker_list as s
