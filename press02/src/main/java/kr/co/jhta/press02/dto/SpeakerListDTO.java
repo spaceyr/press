@@ -1,5 +1,6 @@
 package kr.co.jhta.press02.dto;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class SpeakerListDTO {
 	@Id
 	private int id;

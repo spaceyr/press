@@ -3,6 +3,7 @@ package kr.co.jhta.press02.dto;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class PressInfoDTO {
 	
 	@Id // id pk부여
