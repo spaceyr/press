@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="kr.co.jhta.press02.dao.PressDAO">
+<!-- 전체조회 
+  	<select id="getAll" resultType="PressInfoDTO">
+  		SELECT * 
+  		FROM press_info
+  		ORDER BY id asc
+  	</select>-->
+<!-- 특정날짜 이후 조회 -->
+  	<select id="getAll" parameterType="String" resultType="PressInfoDTO">
+  	select p.name, p.date, p.title from press_info
+  		where date between #{from_date} and #{to_date} as p, speaker_list as s
+			where p.id = s.press_id 
+			and s.party like #{party}
+			and s.name like #{name}
+  	</select>
+  </mapper>
